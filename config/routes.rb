@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
-  match '/sums' =>'tasks#sums',via: :post
-  match '/filters' =>'tasks#filters',via: :post
-  match '/intervals' =>'tasks#intervals',via: :post
-  match '/lin_regressions' =>'tasks#lin_regressions',via: :post
+  post '/sums' =>'tasks#sums'
+  post '/filters' =>'tasks#filters'
+  post '/intervals' =>'tasks#intervals'
+  post '/lin_regressions' =>'tasks#lin_regressions'
 end

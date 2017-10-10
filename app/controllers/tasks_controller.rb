@@ -1,6 +1,6 @@
 class TasksController < ApplicationController
   require 'csv'
-  require 'linear-regression/linear'
+  #require 'linear-regression/linear'
   def sums
     csv_file=params[:file]
     csv_path=csv_file.path
@@ -17,7 +17,7 @@ class TasksController < ApplicationController
     csv_path=csv_file.path
     sum=0
     CSV.foreach(csv_path) do |row|
-      if row[2]%2!=0
+      if row[2].to_i%2==1
         sum+=row[1].to_f
       end
     end

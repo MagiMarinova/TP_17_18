@@ -218,3 +218,192 @@ puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
 puma (3.10.0) lib/puma/server.rb:437:in `process_client'
 puma (3.10.0) lib/puma/server.rb:301:in `block in run'
 puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 22:44:43 +0300
+  
+LoadError (cannot load such file -- linear-regression/linear):
+  
+app/controllers/tasks_controller.rb:3:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<top (required)>'
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 22:46:00 +0300
+  
+LoadError (cannot load such file -- linear-regression/linear):
+  
+app/controllers/tasks_controller.rb:3:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<top (required)>'
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 22:51:38 +0300
+  
+LoadError (cannot load such file -- linear-regression/linear):
+  
+app/controllers/tasks_controller.rb:3:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<top (required)>'
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 22:57:24 +0300
+Processing by TasksController#sums as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df340ad5c0 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-fb1tjm.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+Completed 422 Unprocessable Entity in 1104ms
+
+
+  
+ActionController::InvalidAuthenticityToken (ActionController::InvalidAuthenticityToken):
+  
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:195:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:227:in `handle_unverified_request'
+actionpack (5.1.4) lib/action_controller/metal/request_forgery_protection.rb:222:in `verify_authenticity_token'
+activesupport (5.1.4) lib/active_support/callbacks.rb:413:in `block in make_lambda'
+activesupport (5.1.4) lib/active_support/callbacks.rb:197:in `block (2 levels) in halting'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:12:in `block (2 levels) in <module:Callbacks>'
+activesupport (5.1.4) lib/active_support/callbacks.rb:198:in `block in halting'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `block in invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `each'
+activesupport (5.1.4) lib/active_support/callbacks.rb:507:in `invoke_before'
+activesupport (5.1.4) lib/active_support/callbacks.rb:130:in `run_callbacks'
+actionpack (5.1.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `block in instrument'
+activesupport (5.1.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+activesupport (5.1.4) lib/active_support/notifications.rb:166:in `instrument'
+actionpack (5.1.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+actionpack (5.1.4) lib/action_controller/metal/params_wrapper.rb:252:in `process_action'
+activerecord (5.1.4) lib/active_record/railties/controller_runtime.rb:22:in `process_action'
+actionpack (5.1.4) lib/abstract_controller/base.rb:124:in `process'
+actionview (5.1.4) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.1.4) lib/action_controller/metal.rb:189:in `dispatch'
+actionpack (5.1.4) lib/action_controller/metal.rb:253:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:49:in `dispatch'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:31:in `serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:50:in `block in serve'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `each'
+actionpack (5.1.4) lib/action_dispatch/journey/router.rb:33:in `serve'
+actionpack (5.1.4) lib/action_dispatch/routing/route_set.rb:834:in `call'
+rack (2.0.3) lib/rack/etag.rb:25:in `call'
+rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.3) lib/rack/head.rb:12:in `call'
+rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+activerecord (5.1.4) lib/active_record/migration.rb:556:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.4) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.4) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.4) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.4) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.4) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.4) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.4) lib/rails/engine.rb:522:in `call'
+puma (3.10.0) lib/puma/configuration.rb:225:in `call'
+puma (3.10.0) lib/puma/server.rb:605:in `handle_request'
+puma (3.10.0) lib/puma/server.rb:437:in `process_client'
+puma (3.10.0) lib/puma/server.rb:301:in `block in run'
+puma (3.10.0) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 23:00:33 +0300
+Processing by TasksController#sums as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df337bcee8 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-v3m8py.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 21ms (Views: 19.3ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:13:18 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df336f2788 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-1q8k9se.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.5ms)
+Completed 200 OK in 12ms (Views: 7.6ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:18:48 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df334c8c50 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-vhs65u.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 25ms (Views: 19.6ms)
+
+
+Started POST "/sums" for 127.0.0.1 at 2017-10-10 23:26:15 +0300
+  
+LoadError (cannot load such file -- linear-regression/linear):
+  
+app/controllers/tasks_controller.rb:3:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<top (required)>'
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:35:13 +0300
+  
+LoadError (cannot load such file -- linear-regression/linear):
+  
+app/controllers/tasks_controller.rb:3:in `<class:TasksController>'
+app/controllers/tasks_controller.rb:1:in `<top (required)>'
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:35:46 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df33560140 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-17jvta4.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 74ms (Views: 39.2ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:36:16 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df32a9b430 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-1d4kf6i.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.2ms)
+Completed 200 OK in 4ms (Views: 2.7ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:48:51 +0300
+  
+SyntaxError (/home/magi_marinova/TP.17.18/magi/app/controllers/tasks_controller.rb:20: syntax error, unexpected '=', expecting keyword_then or ';' or '\n'
+      if row[2]%2=1
+                  ^
+/home/magi_marinova/TP.17.18/magi/app/controllers/tasks_controller.rb:62: syntax error, unexpected keyword_end, expecting end-of-input):
+  
+app/controllers/tasks_controller.rb:20: syntax error, unexpected '=', expecting keyword_then or ';' or '\n'
+app/controllers/tasks_controller.rb:62: syntax error, unexpected keyword_end, expecting end-of-input
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:49:22 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df32bdafd0 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-6u3t5z.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 4ms (Views: 2.8ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:49:51 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df32868398 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-1xxvumg.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 28ms (Views: 24.2ms)
+
+
+Started POST "/filters" for 127.0.0.1 at 2017-10-10 23:52:56 +0300
+Processing by TasksController#filters as */*
+  Parameters: {"file"=>#<ActionDispatch::Http::UploadedFile:0x0055df32560880 @tempfile=#<Tempfile:/tmp/RackMultipart20171010-10403-bed5z0.csv>, @original_filename="csvfile.csv", @content_type="application/octet-stream", @headers="Content-Disposition: form-data; name=\"file\"; filename=\"csvfile.csv\"\r\nContent-Type: application/octet-stream\r\n">}
+Can't verify CSRF token authenticity.
+  Rendering text template
+  Rendered text template (0.0ms)
+Completed 200 OK in 9ms (Views: 7.0ms)
+
+
