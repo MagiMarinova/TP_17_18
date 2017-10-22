@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   require 'csv'
-  #require 'linear-regression/linear'
+  require 'action_view'
+  require "linefit.rb"
+
   def sums
     csv_file=params[:file]
     csv_path=csv_file.path
@@ -26,37 +28,48 @@ class TasksController < ApplicationController
   end
 
   def intervals
-    csv_file=params[:file]
-    csv_path=csv_file.path
-    sum=0
-    max=0
-    lines=0
-    i=0
-    count=30
+        csv_file = params[:file]
+        max_sum = 0
+        id = CSV.read(csv_file.path).size
 
-    fil.open(csv_path){|f|lines= f.read.count("\n")}
-
-    if lines <= 30
-      CSV.foreach(csv_path) do |row|
-      max+=row[0].to_f
-      end
-    elsif lines>30
-      CSV.foreach(csv_path) do |row|
-        while i<count do
-        sum+=row[0].to_f
-        i+=1
+        arr = Array.new(id)
+        i = 0
+        CSV.foreach(csv_file.path) do |row|
+              arr[i] = row[0].to_f
+              i+=1
         end
+        i = 0
+
+        until id - 30 < i do
+          sum = 0
+          j = i
+          until j > 30 + i do
+            sum += arr[j] || 0
+            j+=1
+          end
+          if sum > max_sum then
+              max_sum = sum
+          end
+          i+=1
+        end
+        max_sum = max_sum.round(2)
+        render plain: number_with_precision(max_sum, precision: 2)
+  end
+   def lin_regressions
+      csv_file = params[:file]
+      size = CSV.read(csv_file.path).size
+      x = Array.new(size)
+      y = Array.new(size)
+
+      CSV.foreach(csv_file.path).with_index do |row, index|
+        x[index] = row[0].to_f
+        y[index] = row[1].to_f
       end
 
-      if sum>max
-          max=sum
-      end
-    end
-    max="%.2f" % max
-    render :plain => max
-  end
-  # def lin_regressions
-  #
-  # end
+      lin_reg = LineFit.new
+      lin_reg.setData(x, y)
+      intercept, slope = lin_reg.coefficients
+      render plain: '%.6f, %.6f' % [slope,intercept]
+   end
 
 end
